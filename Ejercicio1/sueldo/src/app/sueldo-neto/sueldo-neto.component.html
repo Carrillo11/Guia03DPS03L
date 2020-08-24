@@ -1,0 +1,24 @@
+<div class="header">
+    <h1>Datos de Empleado</h1>
+    <p>Ingrese nombre y sueldo del empleado</p>
+    </div>
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="nombre">
+    <label>Sueldo:</label>
+    <input type="number" [(ngModel)]="sueldo" min=0>
+    <button class="button" (click)="ingresar()">Ingresar</button>
+    <br/><br/>
+    <table [hidden]="contador == 0">
+    <thead>
+    <tr>
+    <th>Nombre</th>
+    <th>Sueldo</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let templeado of registro">
+        <td>{{templeado.nombre}}</td>
+        <td>{{(templeado.sueldo)-(templeado.sueldo)*0.073-(templeado.sueldo)*0.11-(templeado.sueldo)*0.051}}</td>
+        </tr>
+        </tbody>
+        </table>
